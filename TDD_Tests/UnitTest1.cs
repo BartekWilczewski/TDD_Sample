@@ -1,6 +1,8 @@
+using TDD_Sample;
+
 namespace TDD_Tests
 {
-    public class Tests
+    public class StockTest
     {
         [SetUp]
         public void Setup()
@@ -8,9 +10,12 @@ namespace TDD_Tests
         }
 
         [Test]
-        public void Test1()
+        public void CalculateGivenStockAmount()
         {
-            Assert.Pass();
+            int expectedAmount = 4000;
+            var company = new Company() {Name = "CDP", Value = 400, Amount = 10};
+            int amountReturned = company.CalculateTotal();
+            Assert.AreEqual(expectedAmount, amountReturned);
         }
     }
 }
